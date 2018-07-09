@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>云天航拍</title>
+    <!-- 移动 -->
+    <script>
+      //获取像素比
+      //			console.log(window.devicePixelRatio);
+      var pixelRatio = 1 / window.devicePixelRatio;
+      //			console.log(pixelRatio);
+      //通过js动态设置视口(viewport)
+      document.write('<meta name="viewport" content="width=device-width,initial-scale=' + pixelRatio + ',minimum-scale=' +
+        pixelRatio + ',maximum-scale=' + pixelRatio + '" />');
+
+      // 条件：尺寸越大，则字体大小越大。尺寸越小，则字体大小越小。
+
+      // 获取html节点
+      var html = document.getElementsByTagName('html')[0];
+      // 获取屏幕宽度
+      var pageWidth = html.getBoundingClientRect().width;
+      // 屏幕宽度 / 固定数值 = 基准值
+      html.style.fontSize = pageWidth / 24 + "px";
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/build_mobile.js"></script>
+  </body>
+</html>
